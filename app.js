@@ -61,7 +61,7 @@ export async function handler(event) {
         }
         
 
-        const insertQuery = 'INSERT INTO fruit_table(name) VALUES($1, $2, $3)';
+        const insertQuery = 'INSERT INTO fruit_table(name) VALUES($1)';
         const insertPromises = transformedFruits.map(fruit => {
             return pgClient.query(insertQuery, [fruit.name]);
         });
